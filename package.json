@@ -1,0 +1,23 @@
+{
+  "name": "node_microservice",
+  "version": "1.0.0",
+  "description": "microservices with node",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "foshantiger",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "seneca": "^2.1.0",
+    "seneca-entity": "^1.2.0",
+    "seneca-mongo-store": "^0.2.0",
+    "seneca-mysql-store": "^1.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.10.0"
+  }
+}
