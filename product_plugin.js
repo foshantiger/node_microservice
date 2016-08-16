@@ -28,21 +28,20 @@ var product_plugin = function productManagement(options) {
     products.list$({category: 'category', sort$:{price:-1}}, done);
   });
 
-  // /**
-  // * Fetch a product by id.
-  // */
-  // seneca.add({area: "product", action: "fetch", criteria: "byId"},function(args, done) {
-  //   var product = seneca.make$("products");
-  //   console.log('fdsfsd3:' + args.id);
-  //   product.load$(args.id, done);
-  // });
+  /**
+  * Fetch a product by id.
+  */
+  seneca.add({area: "product", action: "fetch", criteria: "byId"},function(args, done) {
+    var product = seneca.make$("products");
+    console.log(args.id);
+    product.load$(args.id, done);
+  });
 
   /**
   * Adds a product.
   */
   seneca.add({area: "product", action: "add"}, function(args,done) {
     var products = seneca.make$("products");
-    console.log(args);
 
     products.category = args.category;
     products.name = args.name;
@@ -57,10 +56,9 @@ var product_plugin = function productManagement(options) {
   /**
   * Removes a product by id.
   */
-  seneca.add({area: "product", action: "remove"}, function(args,done) {
+  seneca.add({area: "product", action: "delete"}, function(args,done) {
     var product = seneca.make$("products");
     console.log(args.id);
-    console.warn('warnaewrfewrewrewrewer');
     product.remove$(args.id, function(err) {
       done(err, null);
     });

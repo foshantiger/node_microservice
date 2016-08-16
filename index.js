@@ -15,9 +15,9 @@ seneca.ready(function(err){
     pin: {area:'product',action:'*'},
     map:{
       fetch: {GET:true},
-      add: {GET:false, POST:true},
+      add: {POST:true,},
       edit: {GET:false, PUT:true},
-      remove: {GET: false, DELETE: true}
+      delete: {GET: false, DELETE: true}
     }
   }});
 
