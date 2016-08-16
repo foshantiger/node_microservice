@@ -42,7 +42,12 @@ describe('When a customer rolls a dice', function() {
 describe("When the user calculates the hypotenuse", function() {
   it("should execute the callback passed as argument", function() {
     var callback = sinon.spy();
+    // console.log(callback);
     calculateHypotenuse(3, 3, callback);
     callback.called.should.be.true;
+  });
+
+  after(function() {
+    Math.random.restore();
   });
 });
